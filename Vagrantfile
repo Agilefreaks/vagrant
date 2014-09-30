@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.define  "win" do |win|
-    win.vm.box = "opentable/win-2008r2-standard-amd64-nocm"
+    win.vm.box = "windows-2008R2-serverstandard-amd64_virtualbox"
     win.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--memory", 2048]
     end
