@@ -9,6 +9,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
+  config.ssh.forward_agent = true
+
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.define  "win" do |win|
     win.vm.box = "windows-2008R2-serverstandard-amd64_virtualbox"
@@ -21,7 +23,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define  "ubuntu" do |ubuntu|
     ubuntu.vm.box = "ubuntu/trusty64"
     ubuntu.vm.provider "virtualbox" do |vb|
-      vb.customize ["modifyvm", :id, "--memory", 1024]
+      vb.customize ["modifyvm", :id, "--memory", 2048]
+    end
+  end
+
+  config.vm.define  "buntu" do |ubuntu|
+    ubuntu.vm.box = "ubuntu/trusty64"
+    ubuntu.vm.provider "virtualbox" do |vb|
+      vb.customize ["modifyvm", :id, "--memory", 2048]
     end
   end
 
