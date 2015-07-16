@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define  "win" do |win|
     win.vm.box = "windows-2008R2-serverstandard-amd64_virtualbox"
     win.vm.provider "virtualbox" do |vb|
-      vb.customize ["modifyvm", :id, "--memory", 2048]
+      vb.customize ["modifyvm", :id, "--memory", 3072]
       vb.customize ["modifyvm", :id, "--chipset", 'ICH9']
     end
   end
